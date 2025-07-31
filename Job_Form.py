@@ -9,7 +9,6 @@ AIRTABLE_API_TOKEN = st.secrets["AIRTABLE_API_TOKEN"]
 AIRTABLE_BASE_ID = st.secrets["AIRTABLE_BASE_ID"]
 AIRTABLE_TABLE_NAME = st.secrets["AIRTABLE_TABLE_NAME"]
 
-
 AIRTABLE_ENDPOINT = f"https://api.airtable.com/v0/{AIRTABLE_BASE_ID}/{AIRTABLE_TABLE_NAME}"
 HEADERS = {
     "Authorization": f"Bearer {AIRTABLE_API_TOKEN}",
@@ -62,11 +61,11 @@ with st.form("job_form", clear_on_submit=True):
     if lang == "English":
         st.markdown("<h2 style='text-align: center; color: navy;'>Job Application Form</h2>", unsafe_allow_html=True)
         st.subheader("📝 Personal Information")
-        col1, col2 = st.columns(2)
-        first_name = col1.text_input("First Name *")
-        last_name = col2.text_input("Last Name *")
-        phone = col1.text_input("Phone Number *")
-        email = col2.text_input("Email *")
+
+        first_name = st.text_input("First Name *")
+        last_name = st.text_input("Last Name *")
+        phone = st.text_input("Phone Number *")
+        email = st.text_input("Email *")
 
         age_group_col, gender_col = st.columns(2)
         age_group = age_group_col.selectbox("Age Group *", ["18-24", "25-34", "35-44", "45-54", "55+"])
@@ -108,11 +107,11 @@ with st.form("job_form", clear_on_submit=True):
     else:
         st.markdown(rtl("<h2 style='text-align: center; color: navy;'>طلب تقديم على وظيفة</h2>"), unsafe_allow_html=True)
         st.markdown(rtl("📝 المعلومات الشخصية"), unsafe_allow_html=True)
-        col1, col2 = st.columns(2)
-        first_name = col1.text_input("الاسم الأول *")
-        last_name = col2.text_input("اسم العائلة *")
-        phone = col1.text_input("رقم الهاتف *")
-        email = col2.text_input("البريد الإلكتروني *")
+
+        first_name = st.text_input("الاسم الأول *")
+        last_name = st.text_input("اسم العائلة *")
+        phone = st.text_input("رقم الهاتف *")
+        email = st.text_input("البريد الإلكتروني *")
 
         age_group_col, gender_col = st.columns(2)
         age_group = age_group_col.selectbox("الفئة العمرية *", ["18-24", "25-34", "35-44", "45-54", "55+"])
