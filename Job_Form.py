@@ -55,7 +55,7 @@ def submit_to_airtable(data):
 
 st.set_page_config(page_title="Job Application / طلب وظيفة", layout="centered")
 
-lang = st.radio("Language / اللغة", ["English", "Arabic 🇸🇦"], horizontal=True)
+lang = st.radio("Language / اللغة", ["English", "Arabic"], horizontal=True)
 
 with st.form("job_form", clear_on_submit=True):
     if lang == "English":
@@ -78,9 +78,18 @@ with st.form("job_form", clear_on_submit=True):
 
         st.subheader("🎯 Position Applied For")
         job_title = st.selectbox("Job Title *", [
-            "Consultant", "General Practitioner Doctor (Gp)", "Doctor Specialist", "Assistant Pharmacist",
-            "Social worker", "Psychologist", "Human Resource Administrative", "Customer Happiness Executive"
+            "Consultant Psychiatrist",
+            "General Practitioner Doctor (GP)",
+            "Specialist Psychiatrist",
+            "Assistant Pharmacist",
+            "Social worker",
+            "Psychologist",
+            "Human Resource Administrative",
+            "Customer Happiness Executive",
+            "Dietitian Specialist",
+            "Speech Therapist"
         ])
+
         current_status = st.radio("Current Status *", [
             "Fresh Graduate", "Currently Unemployed", "Employed", "Retired"
         ])
@@ -124,9 +133,18 @@ with st.form("job_form", clear_on_submit=True):
 
         st.markdown(rtl("💼 معلومات الوظيفة"), unsafe_allow_html=True)
         job_title = st.selectbox("المسمى الوظيفي *", [
-            "طبيب إستشاري", "طبيب ممارس عام", "طبيب أخصائي", "مساعد صيدلي",
-            "أخصائي خدمة اجتماعية", "أخصائي اجتماعي", "إداري موارد بشرية", "تنفيذي إسعاد المتعاملين"
+            "طبيب استشاري نفسي",
+            "طبيب ممارس عام",
+            "طبيب أخصائي نفسي",
+            "مساعد صيدلي",
+            "أخصائي خدمة اجتماعية",
+            "أخصائي نفسي",
+            "إداري موارد بشرية",
+            "تنفيذي إسعاد المتعاملين",
+            "أخصائي تغذية",
+            "أخصائي نطق"
         ])
+
         current_status = st.radio("الحالة الحالية *", [
             "خريج جديد", "عاطل عن العمل", "موظف", "متقاعد"
         ])
